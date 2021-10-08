@@ -56,7 +56,6 @@ export default {
         return {
             filter: {
                 name: null,
-                code: null,
                 status: null
             },
         }
