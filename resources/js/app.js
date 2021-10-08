@@ -6,6 +6,10 @@
 
 require('./bootstrap');
 
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 window.Vue = require('vue').default;
 
 /**
@@ -19,7 +23,12 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+Vue.component('products-table', require('./components/products/table.vue').default);
+Vue.component('products-filters', require('./components/products/filters.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
