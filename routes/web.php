@@ -22,4 +22,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::view('/products', 'products.index')->name('products.index');
+Route::view('/products', 'products.index')
+    ->middleware('auth')
+    ->name('products.index');

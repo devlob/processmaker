@@ -9,6 +9,10 @@ class ProductUpdateRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
+            'description' => 'required',
+            'code' => 'required',
+            'status' => ['required', 'boolean'],
         ];
     }
 }
